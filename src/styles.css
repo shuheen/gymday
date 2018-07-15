@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css';
+body{
+    background-color: #f1f1f1;
+    padding: 0;
+    margin: 0
+}
+body, html{
+    height: 100%;
+}
+*{
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+.theme-bg{
+    background-color: #693e9c;
+}
+.theme-color{
+    color: #693e9c;
+}
+.font-weight-light{
+    font-weight: 300;
+}
+.font-weight-bold{
+    font-weight: 700;
+}
+.font-weight-medium{
+    font-weight: 500;
+}
+.no-margin{
+    margin: 0;
+}
+.no-padding{
+    padding: 0;
+}
+.color-grey{
+    color: #4d4d4d;
+}
+.color-light-grey{
+    color: #aaa;
+}
+.bg-light-grey{
+    background-color: #aaa;
+}
+.bg-grey{
+    background-color:#ccc;
+}
+.color-white{
+    color: white
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.mat-ink-bar{
+    background-color: #693e9c;
+}
+.mat-tab-header{
+    border-bottom: 1px solid #ccc;
+}
+.mat-tab-labels{
+    background-color: #f1f1f1
+}
+.flex-half{
+    flex: 1;
+}
+.text-right{
+    text-align: right
+}
+.text-left{
+    text-align: left
+}
+.text-center{
+    text-align: center
+}

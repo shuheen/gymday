@@ -1,0 +1,16 @@
+<div class="search-container">
+  <span class="search-icon mdi mdi-account-search mdi-24px theme-bg"></span>
+  <input type="search" class="search" placeholder="Enter Customer Name and Phone Number">
+</div>
+<div class="main-container">
+    <mat-tab-group disableRipple>
+        <mat-tab *ngFor="let category of categories$" [disabled]="category.name != 'Gymnasium'" label="{{category.name}}">
+          <div class="example-small-box mat-elevation-z4">
+              <app-gymnasium *ngIf="category.name=='Gymnasium'"></app-gymnasium>  
+              <app-swimming *ngIf="category.name=='Swimming'"></app-swimming>  
+              <app-yoga *ngIf="category.name=='Yoga'"></app-yoga>  
+              <app-tennis *ngIf="category.name=='Tennis'"></app-tennis>             
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+</div>

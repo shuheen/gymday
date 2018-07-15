@@ -1,0 +1,13 @@
+<div class="main-container">
+  <div class="side-container">
+    <button *ngFor="let plan of plans$" class="side-btn cursor-pointer" (click)="filterData($event.target.textContent)" [class.active]="plan.name == selectedPlan">{{plan.name}}</button>
+  </div>
+  <div class="right-container">
+    <ul class="subplans-ul">
+      <li *ngFor="let data of filteredPlans">
+        <div class="flex-half">{{data.duration}}</div>
+        <div class="flex-half text-right">{{data.price | currency:'INR':true}}</div>
+      </li>
+    </ul>
+  </div>
+</div>

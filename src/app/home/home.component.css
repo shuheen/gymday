@@ -1,0 +1,16 @@
+.home-container{
+    margin-left: 230px;
+    display: block;
+    padding: 20px 0;
+}
+.tabs-container{
+    width: 60%;
+    margin: 0 5%;
+}
+.mat-tab-label-active{
+    background-color: #ccc !important
+}
+
+.mat-ink-bar{
+    background-color: #693e9c;
+}
