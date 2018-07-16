@@ -1,6 +1,34 @@
+
+
 <div class="search-container">
-  <span class="search-icon mdi mdi-account-search mdi-24px theme-bg"></span>
-  <input type="search" class="search" placeholder="Enter Customer Name and Phone Number">
+  <span class="search-icon mdi mdi-account-search mdi-36px theme-color"></span>
+  <input type="search" class="search" (keyup)="getSearchResult($event)" #searchInput placeholder="Enter Customer Name or Phone Number">
+  <div *ngIf="selectedUserElem" class="selected-user">
+    <div class="detials-container">
+      <div class="flex2">
+          <p class="no-margin user-p">{{selectedUser.firstName}} {{selectedUser.lastName}}<br><span class="user-phone">{{selectedUser.phone}}</span></p>
+      </div>
+      <div class="flex1 text-right">
+        <span class="mdi mdi-close mdi-24px cursor-pointer" (click)="closeSelectedUser()"></span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="searchListOpen" class="search-result-container">
+    <ul *ngIf="searchResult.length != 0" class="search-list">
+      <li *ngFor="let user of searchResult" (click)="getUserDetailsById(user.id)">
+        <div class="search-name-container">
+          <span *ngIf="user.status=='issue'" class="status circle issue"></span>
+          <span *ngIf="user.status=='inactive'" class="status circle inactive"></span>
+          <span *ngIf="user.status=='active'" class="status circle active"></span>
+          <span *ngIf="user.status=='hot'" class="status mdi mdi-star hot"></span>
+          <span *ngIf="user.status=='cold'" class="status mdi mdi-star cold"></span>
+          <p class="no-margin flex1">{{user.firstName}} {{user.lastName}}<br><span class="user-phone">{{user.phone}}</span></p>
+        </div>
+        <div class="search-type-container">{{user.type}}</div>
+      </li>
+    </ul>
+      <div class="text-center" *ngIf="searchResult == 0">No Users Found</div>
+  </div>
 </div>
 <div class="main-container">
     <mat-tab-group disableRipple>
@@ -13,4 +41,19 @@
           </div>
         </mat-tab>
       </mat-tab-group>
+      <hr>
+      <div class="secondary-container">
+        <label class="font-weight-bold">Start Date</label>
+        <div>{{today | date: 'MMMM d, y'}}</div>
+      </div>
+      <hr>
+      <div class="secondary-container">
+          <mat-form-field disableRipple>
+              <mat-select [(value)]="selected">
+                <mat-option>No Coupon Selected</mat-option>
+                <mat-option *ngFor="let coupon of couponsList" [value]="coupon.discount">{{coupon.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+      </div>
+      
 </div>

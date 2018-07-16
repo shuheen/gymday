@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
 import {TabViewModule} from 'primeng/tabview';
 
 import { AngularFireModule } from 'angularfire2';
@@ -25,6 +26,7 @@ import { GymnasiumComponent } from './gymnasium/gymnasium.component';
 import { SwimmingComponent } from './swimming/swimming.component';
 import { YogaComponent } from './yoga/yoga.component';
 import { TennisComponent } from './tennis/tennis.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { TennisComponent } from './tennis/tennis.component';
     GymnasiumComponent,
     SwimmingComponent,
     YogaComponent,
-    TennisComponent
+    TennisComponent,
+    CartComponent
   ],
   imports: [
   
@@ -45,6 +48,7 @@ import { TennisComponent } from './tennis/tennis.component';
     FormsModule,
 
     MatTabsModule,
+    MatSelectModule,
     TabViewModule,
 
     AngularFireModule.initializeApp(environment.firebase),
