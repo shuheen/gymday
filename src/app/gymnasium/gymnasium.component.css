@@ -37,7 +37,6 @@
 }
 .subplans-ul{
     display: block;
-   
     width: 90%;
     margin: 0 auto
 }
@@ -50,6 +49,10 @@
     cursor: pointer;
     margin: 5px 0;
     box-shadow: 0px 0px 5px #ccc;
+}
+.subplans-ul li.active{
+    background-color: #683e9c2e;
+    
 }
 .subplans-ul li:hover{
     background-color: #683e9c2e

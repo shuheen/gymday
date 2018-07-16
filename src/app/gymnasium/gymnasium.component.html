@@ -3,8 +3,9 @@
     <button *ngFor="let plan of plans$" class="side-btn cursor-pointer" (click)="filterData($event.target.textContent)" [class.active]="plan.name == selectedPlan">{{plan.name}}</button>
   </div>
   <div class="right-container">
+    
     <ul class="subplans-ul">
-      <li *ngFor="let data of filteredPlans">
+      <li *ngFor="let data of filteredPlans" [class.active]="data.id == selectedPlantoCart.id" (click)="passPlan(data.id)">
         <div class="flex-half">{{data.duration}}</div>
         <div class="flex-half text-right">{{data.price | currency:'INR':true}}</div>
       </li>

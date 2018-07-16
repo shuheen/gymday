@@ -1,11 +1,45 @@
-<ul class="cart-ul">
+<ul class="cart-ul" *ngIf="forCart">
+  
   <li class="color-white">
     <p class="no-margin flex2">
-      <strong>Pack Name</strong> SubPlan<br>
-      <small>Months</small>
+      <strong>{{selectedCat}}</strong> {{selectedPlan.plan}}
+      <br>
+      <small>{{selectedPlan.duration}}</small>
     </p>
-    <p class="no-margin text-right flex1s">
-      Rs. 1000
+    <p class="no-margin text-right flex1">
+      {{selectedPlan.price | currency:'INR':true}}
     </p>
   </li>
+  
+  <li class="color-white" *ngIf="selectedOffer">
+    <span class="offer-label">Offers</span>
+    <p class="offer-name flex2">
+      <strong>{{selectedOffer.name}} ({{selectedOffer.value}}% OFF)</strong>
+    </p>
+    <p class="offer-name">{{discountPrice | currency:'INR':true}}</p>
+  </li>
 </ul>
+<div class="taxation" *ngIf="forCart">
+  <ul class="tax">
+    <li>
+      <p class="no-margin flex2 font-weight-bold">Sub Total</p>
+      <p class="no-margin flex2 font-weight-bold text-right">{{subTotal | currency:'INR':true}}</p>
+    </li>
+    <li>
+      <p class="no-margin flex2"><small>Service Tax</small></p>
+      <p class="no-margin flex2 text-right"><small>{{serviceTaxAmount | currency:'INR':true}}</small></p>
+    </li>
+    <li>
+        <p class="no-margin flex2"><small>Security Deposit</small></p>
+        <p class="no-margin flex2 text-right"><small>{{securityDeposit | currency:'INR':true}}</small></p>
+    </li>
+  </ul>
+
+  <h2 class="color-white">{{grandTotal | currency:'INR':true}}</h2>
+  <small class="grey-color">Total Amount Payble</small>
+  <p></p>
+  <button class="btn-block btn-block1 cursor-pointer" (click)="paymentDone()">PAYMENT RECIEVED</button>
+  <button class="btn-block btn-block2 cursor-pointer">SEND PAYMENT LINK</button>
+</div>
+
+

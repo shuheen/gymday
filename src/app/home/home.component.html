@@ -1,13 +1,12 @@
 <div class="home-container">
   <div class="tabs-container">
-      <mat-tab-group disableRipple dynamicHeight class="example-stretched-tabs">
+      <mat-tab-group disableRipple class="example-stretched-tabs">
           <mat-tab label="Point of Sale">
             <app-point-of-sale></app-point-of-sale>
           </mat-tab>
-          <mat-tab label="Billing History">
+          <mat-tab disabled label="Billing History">
             <app-billing-history></app-billing-history>
           </mat-tab>
-          <div class="">Hello</div>
         </mat-tab-group>
   </div>
   <div class="cart">
@@ -18,3 +17,4 @@
     <app-cart></app-cart>
   </div>
 </div>
+

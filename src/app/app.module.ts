@@ -27,6 +27,8 @@ import { SwimmingComponent } from './swimming/swimming.component';
 import { YogaComponent } from './yoga/yoga.component';
 import { TennisComponent } from './tennis/tennis.component';
 import { CartComponent } from './cart/cart.component';
+import { SharedService } from './shared.service';
+import { PopupComponent } from './popup/popup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { CartComponent } from './cart/cart.component';
     SwimmingComponent,
     YogaComponent,
     TennisComponent,
-    CartComponent
+    CartComponent,
+    PopupComponent
   ],
   imports: [
   
@@ -65,6 +68,7 @@ import { CartComponent } from './cart/cart.component';
   ],
   providers: [
     CategoryService,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })

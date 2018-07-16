@@ -1,0 +1,11 @@
+<div class="pop-container" *ngIf="popOpen">
+  <div class="pop-main">
+      <div class="circle theme-bg">
+        <i class="mdi mdi-36px mdi-check"></i>
+      </div>
+      <h2 class="text-center">Transaction Complete</h2>
+      <p class="color-grey no-margin text-center">Invoice Sent by mail to John Doe</p>
+      <a href="javascript:void(0)" class="text-center"><small>View Invoince</small></a>
+      <button class="ok-btn theme-bg cursor-pointer" (click)="closePop()">Okay</button>
+  </div>
+</div>

@@ -91,3 +91,10 @@ ul{
 .clearfix{
     clear: both;
 }
+.mat-tab-body.mat-tab-body-active {
+    
+    min-height: 400px;
+}
+.hidden-of{
+    overflow: hidden;
+}

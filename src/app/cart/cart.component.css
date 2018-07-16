@@ -1,7 +1,56 @@
+.cart-ul{
+    min-height: 300px;
+}
 .cart-ul li{
     display: flex;
     padding: 15px;
     border-bottom: 1px solid rgb(58, 58, 58);
     align-items: center;
     font-size: 85%;
+    position: relative;
+}
+.offer-label{
+    display: inline-block;
+    width: 21%;
+    color: #fff;
+    background-color: coral;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
+.offer-name{
+    margin-bottom:0;
+    margin-top: 20px;
+}
+
+ul.tax li{
+    padding: 10px;
+    border-bottom: 1px solid rgb(53, 53, 53);
+    display: flex;
+    color: #fff;
+}
+h2{
+    margin-bottom: 0px;
+    margin-top: 30px;
+    color: #ff8f27;
+}
+.grey-color{
+    color: #ccc;
+}
+.btn-block{
+    width: 100%;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: none;
+    margin: 5px 0;
+}
+.btn-block1{
+    background-color: rgb(255, 153, 0)
+}
+.btn-block2{
+    background-color: rgb(75, 189, 242)
 }

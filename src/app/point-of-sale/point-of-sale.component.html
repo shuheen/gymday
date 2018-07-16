@@ -2,7 +2,7 @@
 
 <div class="search-container">
   <span class="search-icon mdi mdi-account-search mdi-36px theme-color"></span>
-  <input type="search" class="search" (keyup)="getSearchResult($event)" #searchInput placeholder="Enter Customer Name or Phone Number">
+  <input type="text" class="search" (keyup)="getSearchResult($event)" #searchInput placeholder="Enter Customer Name or Phone Number">
   <div *ngIf="selectedUserElem" class="selected-user">
     <div class="detials-container">
       <div class="flex2">
@@ -31,9 +31,9 @@
   </div>
 </div>
 <div class="main-container">
-    <mat-tab-group disableRipple>
-        <mat-tab *ngFor="let category of categories$" [disabled]="category.name != 'Gymnasium'" label="{{category.name}}">
-          <div class="example-small-box mat-elevation-z4">
+    <mat-tab-group disableRipple #tabgroup (selectedTabChange)="change($event)">
+        <mat-tab *ngFor="let category of categories$" label="{{category.name}}" [disabled]="category.name != 'Gymnasium'" >
+          <div class="example-small-box">
               <app-gymnasium *ngIf="category.name=='Gymnasium'"></app-gymnasium>  
               <app-swimming *ngIf="category.name=='Swimming'"></app-swimming>  
               <app-yoga *ngIf="category.name=='Yoga'"></app-yoga>  
@@ -48,9 +48,9 @@
       </div>
       <hr>
       <div class="secondary-container">
-          <mat-form-field disableRipple>
-              <mat-select [(value)]="selected">
-                <mat-option>No Coupon Selected</mat-option>
+          <mat-form-field disableRipple >
+              <mat-select [(value)]="selectedOffInList" placeholder="Select Offer" (selectionChange)="getOffer($event.source)">
+               
                 <mat-option *ngFor="let coupon of couponsList" [value]="coupon.discount">{{coupon.name}}</mat-option>
               </mat-select>
             </mat-form-field>

@@ -29,57 +29,67 @@ export class CategoryService {
   }]
 
   Subplan = [{
+    id:1,
     duration: '1 Month',
     price: 4400,
     plan: 'Standard',
   },
   {
+    id:2,
     duration: '3 Months',
     price: 11500,
     plan: 'Standard',
   },
   {
+    id:3,
     duration: '6 Months',
     price: 20000,
     plan: 'Standard',
   },
   {
+    id:4,
     duration: '9 Months',
     price: 28000,
     plan: 'Standard',
   },
   {
+    id:5,
     duration: '12 Months',
     price: 35000,
     plan: 'Standard',
   },
   {
+    id:6,
     duration: '3 Months',
     price: 12500,
     plan: 'Premium',
   },
   {
+    id:7,
     duration: '6 Months',
     price: 19000,
     plan: 'Premium',
   },
   {
+    id:8,
     duration: '9 Months',
     price: 27000,
     plan: 'Premium',
   },
   {
+    id:9,
     duration: '12 Months',
     price: 32000,
     plan: 'Premium',
-  }
-    ,
+  },
   {
+    id:10,
     duration: '1 Week',
     price: 8000,
     plan: 'Guest',
   },
   {
+    id:11,
     duration: '1 Month',
     price: 18000,
     plan: 'Guest',

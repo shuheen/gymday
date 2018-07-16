@@ -4,7 +4,23 @@
   </div>
   <div class="nav-search-container">
     <div class="search-input">
-      <input type="text" class="search" placeholder="Search by Name, Phone No. or Email">
+      <input type="text" class="search" (keyup)="getSearchResult($event)" #searchInput placeholder="Search by Name, Phone No. or Email">
+      <div *ngIf="searchListOpen" class="search-result-container">
+          <ul *ngIf="searchResult.length != 0" class="search-list">
+            <li *ngFor="let user of searchResult">
+              <div class="search-name-container">
+                <span *ngIf="user.status=='issue'" class="status circle issue"></span>
+                <span *ngIf="user.status=='inactive'" class="status circle inactive"></span>
+                <span *ngIf="user.status=='active'" class="status circle active"></span>
+                <span *ngIf="user.status=='hot'" class="status mdi mdi-star hot"></span>
+                <span *ngIf="user.status=='cold'" class="status mdi mdi-star cold"></span>
+                <p class="no-margin flex1">{{user.firstName}} {{user.lastName}}<br><span class="user-phone">{{user.phone}}</span></p>
+              </div>
+              <div class="search-type-container">{{user.type}}</div>
+            </li>
+          </ul>
+            <div class="text-center" *ngIf="searchResult == 0">No Users Found</div>
+        </div>
     </div>
   </div>
   <div class="setting-container">
